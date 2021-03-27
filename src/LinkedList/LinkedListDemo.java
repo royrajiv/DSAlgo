@@ -11,6 +11,7 @@ public class LinkedListDemo {
 		integers.addAtStart(12);
 		integers.addAtStart(19);
 		integers.addAtStart(20);
+		integers.addAtStart(21);
 		System.out.println(integers.length());
 		System.out.println(integers.find(5));
 	}
