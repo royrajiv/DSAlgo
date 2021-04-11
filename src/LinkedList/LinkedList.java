@@ -1,65 +1,79 @@
 package LinkedList;
 
-public class LinkedList<T> {
+public class LinkedList {
+    private Link head;
 
-	private Node<T> head;
+    public LinkedList() {
+        head = null;
+    }
 
-	public Node<T> getHead() {
-		return this.head;
-	}
+    public boolean isEmpty() // true if list is empty
+    {
+        return head == null;
+    }
 
-	public void addAtStart(T data) {
-		Node<T> newNode = new Node<T>(data);
-		newNode.setNextNode(this.head);
-		this.head = newNode;
-	}
+    // insert at start of list
+    public void insertFirst(int id, double dd) {
+        Link newLink = new Link(id, dd);
+        newLink.next = head;
+        head = newLink;
+    }
 
-	public void setHead(Node<T> data) {
-		this.head = data;
-	}
+    public Link deleteFirst() // delete first item
+    {
+        if (head == null)
+            return null;
+        Link temp = head;
+        head = head.next;
+        return temp;
+    }
 
-	public Node<T> deleteAtStart() {
-		Node<T> toDel = this.head;
-		this.head = this.head.getNextNode();
-		return toDel;
-	}
+    public void displayList() {
+        Link current = head;
+        while (current != null) {
+            current.displayLink();
+            System.out.println(" ");
+            current = current.next;
+        }
+    }
+}
 
-	public Node<T> find(T data) {
-		Node<T> curr = this.head;
-		while (curr != null) {
-			if (curr.getClass().equals(data)) {
-				return curr;
-			}
-			curr = curr.getNextNode();
-		}
-		return null;
-	}
+class Link {
+    public int iData; // data item (key)
+    public double dData; // data item
+    public Link next; // next link in list
 
-	public int length() {
-		if (head == null)
-			return 0;
-		int length = 0;
-		Node<T> curr = this.head;
-		while (curr != null) {
-			length += 1;
-			curr = curr.getNextNode();
-		}
-		return length;
-	}
+    public Link(int id, double dd) // constructor
+    {
+        iData = id; // initialize data
+        dData = dd; // (‘next’ is automatically set to null
+    }
 
-	public boolean isEmpty() {
-		return this.head == null;
-	}
+    public void displayLink() // display yourself
+    {
+        System.out.print(" {" + iData + ", " + dData + "} ");
+    }
+}
 
-	@Override
-	public String toString() {
-		String res = "";
-		Node<T> curr = this.head;
-		while (curr != null) {
-			res += curr + ", ";
-			curr = curr.getNextNode();
-		}
-		return res;
-	}
+class LinkedListApp{
 
+    public static void main(String[] args){
+        LinkedList theList = new LinkedList();
+
+        theList.insertFirst(22, 2.99); // insert four items
+        theList.insertFirst(44, 4.99);
+        theList.insertFirst(66, 6.99);
+        theList.insertFirst(88, 8.99);
+        System.out.println("Displaying List ");
+        theList.displayList(); // display list
+        while( !theList.isEmpty() ) // until it’s empty,
+        {
+            Link aLink = theList.deleteFirst(); // delete link
+            System.out.print("Deleted "); // display it
+            aLink.displayLink();
+            System.out.println(" ");
+        }
+        theList.displayList(); // display list
+
+    }
 }
