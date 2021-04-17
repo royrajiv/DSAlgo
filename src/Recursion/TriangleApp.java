@@ -14,14 +14,9 @@ public class TriangleApp {
     } // end main()
 
     public static int triangle(int n) {
-        if (n == 1) {
-            System.out.println("Returning                   1");
+        if (n == 1)
             return 1;
-        } else {
-            int temp = n + triangle(n - 1);
-            System.out.println("Returning n:                " + n);
-            System.out.println("Returning calculated value: " + temp);
-            return temp;
-        }
+        else
+            return n + triangle(n - 1);
     }
 }
