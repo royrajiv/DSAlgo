@@ -22,10 +22,15 @@ public class PriorityQueue {
         if (nItems == maxSize)
             return;
 
-        // 5(0),3(1),2(2) : insert 4 : nItems = 3 : mazsize = 10
+        // 5(0),3(1),2(2) : insert 4 : nItems = 3 : maxsize = 10
         // nItems=3, j=1:
         // k=2; 2>1
         // k -> 2 -> 1 -> 0 (breaks)
+        //k=2 (nItems-1): arr[3]=arr[2]
+        //k=1: arr[2]=arr[1]
+        //k=0 : 4 !> 5 hence break
+        //arr[k+1] = arr[1] = item = 4
+        // nItems++ = 4;
         int k;
         for (k = nItems - 1; k >= 0; k--) {   // start at end
             if (item > queArray[k])            // if new item is larger or array item is smaller
