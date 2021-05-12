@@ -1,0 +1,134 @@
+package Graph;
+
+class StackX {
+    private final int SIZE = 20;
+    private int[] st;
+    private int top;
+
+    public StackX() // constructor
+    {
+        st = new int[SIZE]; // make array
+        top = -1;
+    }
+
+    public void push(int j) // put item on stack
+    {
+        st[++top] = j;
+    }
+
+    public int pop() // take item off stack
+    {
+        return st[top--];
+    }
+
+    public int peek() // peek at top of stack
+    {
+        return st[top];
+    }
+
+    public boolean isEmpty() // true if nothing on stack-
+    {
+        return (top == -1);
+    }
+}
+
+class VertexDFS {
+    public char label; // label (e.g. ‘A’)
+    public boolean wasVisited;
+
+    public VertexDFS(char lab) {
+        label = lab;
+        wasVisited = false;
+    }
+}
+
+
+class GraphDFS {
+    private final int MAX_VERTS = 20;
+    private VertexDFS vertexList[]; // list of vertices
+    private int adjMat[][]; // adjacency matrix
+    private int nVerts; // current number of vertices
+    private StackX theStack;
+
+    public GraphDFS() // constructor
+    {
+        vertexList = new VertexDFS[MAX_VERTS];
+        adjMat = new int[MAX_VERTS][MAX_VERTS];     // adjacency matrix
+        nVerts = 0;
+        for (int j = 0; j < MAX_VERTS; j++)          // set adjacency
+            for (int k = 0; k < MAX_VERTS; k++)      // matrix to 0
+                adjMat[j][k] = 0;
+        theStack = new StackX();
+    }
+
+    public void addVertex(char lab) {
+        vertexList[nVerts++] = new VertexDFS(lab);
+    }
+
+    public void addEdge(int start, int end) {
+        adjMat[start][end] = 1;
+        adjMat[end][start] = 1;
+    }
+
+    public void displayVertex(int v) {
+        System.out.print(vertexList[v].label);
+    }
+
+    public void dfs() // depth-first search
+    {
+        vertexList[0].wasVisited = true; // begin at vertex 0 // mark it
+        displayVertex(0);             // display it
+        theStack.push(0);             // push it
+        while (!theStack.isEmpty()) // until stack empty,
+        {
+            // get an unvisited vertex adjacent to stack top
+            int v = getAdjUnvisitedVertex(theStack.peek());
+            if (v == -1) // if no such vertex,
+                theStack.pop();
+            else // if it exists,
+            {
+                vertexList[v].wasVisited = true; // mark it
+                displayVertex(v); // display it
+                theStack.push(v); // push it
+            }
+        } // end while
+
+        // stack is empty, so we’re done
+        for (int j = 0; j < nVerts; j++) // reset flags
+            vertexList[j].wasVisited = false;
+    }
+
+    // returns an unvisited vertex adj to v
+    public int getAdjUnvisitedVertex(int v) {
+        for (int j = 0; j < nVerts; j++)
+            if (adjMat[v][j] == 1 && vertexList[j].wasVisited == false)
+                return j;
+        return -1;
+    }
+}
+
+public class DFSApp
+{
+    public static void main(String[] args)
+    {
+        /**
+         *     A--B--C
+         *     |
+         *     D--E
+         */
+        GraphDFS theGraph = new GraphDFS();
+        theGraph.addVertex('A'); // 0 (start for dfs)
+        theGraph.addVertex('B'); // 1
+        theGraph.addVertex('C'); // 2
+        theGraph.addVertex('D'); // 3
+        theGraph.addVertex('E'); // 4
+        theGraph.addEdge(0, 1); // AB
+        theGraph.addEdge(1, 2); // BC
+        theGraph.addEdge(0, 3); // AD
+        theGraph.addEdge(3, 4); // DE
+        System.out.print("Visits: ");
+        //prints ABCDE
+        theGraph.dfs(); // depth-first search
+        System.out.println();
+    } // end main()
+}
