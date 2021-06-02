@@ -52,7 +52,12 @@ public class PrintAllBinaryApp {
 
             // multiple choices hence multiple recursive calls.
             // "0", "1", at end : my work is adding on to the work done by calls before me
-            // each call adds to the end what came before it.
+            // I like to think it as : each call adds to the end what came before it.
+            // so its their work +  my work.
+            // total work gets printed in base case.
+            // my work is a 0
+            // then my work is a 1
+            // adding "0"/"1" before output will still work, it will flip the order.
             printAllBinaryHelper(n-1, output + "0");
             printAllBinaryHelper(n-1, output + "1");
         }
