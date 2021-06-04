@@ -1,4 +1,4 @@
-package Recursion;
+package Recursion.Backtracking;
 
 //Given a positive integer number N. The task is to generate all the decimal strings of N bits.
 // https://www.youtube.com/watch?v=wiBPsaJs2yQ&t=445s
