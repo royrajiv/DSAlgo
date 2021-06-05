@@ -45,8 +45,14 @@ public class DiceRollSumApp {
         all the calls before me have done all the work.
         Hence, my job is to check/print all the great work that guys did before me.
 
-    backtracking:
-    common trick : use a helper function since we need to keep track of work done along the way.
+    @TODO backtracking:
+    common trick : use a helper function since we need a way to keep track of
+    choices we have made along the way.
+    Each call makes a choice.
+    You gather together a series of choices and then you do something with them.
+    And so you need to keep a track of choices made along the way.
+
+    In this particular problem Vector/List is used to keep track of the choices.
      */
     private static int count=0;
     public static void main(String[] args) {
@@ -62,12 +68,20 @@ public class DiceRollSumApp {
     }
 
     private static void diceSumHelper(int numberOfDice, int targetSum, List<Integer> chosen){
+        count++;
 
-        if(targetSum < 0) //Backtracking since exploring further will not reach optimum solution.
-        {
-            count++;
+        //Backtracking since exploring further will not reach optimum solution.
+        //sometimes during backtracking there is such a big space to explore
+        //that if ou start going down a path thats bad, you need to recognize it
+        //and you need to withdraw and try a different path right-away.
+
+        //that is sometimes called pruning the call tree or trimming the call tree
+        //trimming branches off the recursion tree basically.
+        if(targetSum < 0 || (targetSum ==0 && numberOfDice !=0))
             return;
-        }
+        if (!(targetSum >= numberOfDice*1 && targetSum <= numberOfDice*6 ))
+            return;
+
         if(numberOfDice ==0)
         {
             //@TODO base case for backtracking or exhaustive search problem:
@@ -108,7 +122,7 @@ public class DiceRollSumApp {
                //@TODO "explore" what could follow that (explore means recursion :))
                 diceSumHelper(numberOfDice-1, targetSum-i, chosen);
 
-               //@TODO "un-choose" i
+               //@TODO "un-choose" i (backtrack)
                // we have to remove from the chosen "soFar" because we only want 3 values.
 
                // what we need to do is we need to pick the value one , explore what could follow
