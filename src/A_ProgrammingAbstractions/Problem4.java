@@ -1,4 +1,4 @@
-package A_ProgAbs;
+package A_ProgrammingAbstractions;
 
 /**
  * Write an iterative implementation of the function Fib(n).

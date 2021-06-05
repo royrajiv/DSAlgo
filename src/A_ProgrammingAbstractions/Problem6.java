@@ -1,4 +1,4 @@
-package A_ProgAbs;
+package A_ProgrammingAbstractions;
 
 /*
  Write a recursive function DigitSum(n) that takes a nonnegative integer and returns

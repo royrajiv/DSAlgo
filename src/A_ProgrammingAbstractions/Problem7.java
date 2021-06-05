@@ -1,4 +1,4 @@
-package A_ProgAbs;
+package A_ProgrammingAbstractions;
 
 /*
     The digital root of an integer n is defined as the result of summing the digits

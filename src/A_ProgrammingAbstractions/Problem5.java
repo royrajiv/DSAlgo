@@ -1,4 +1,4 @@
-package A_ProgAbs;
+package A_ProgrammingAbstractions;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,4 +1,4 @@
-package A_ProgAbs;
+package A_ProgrammingAbstractions;
 
 /**
  * Spherical objects, such as cannonballs, can be stacked to form a pyramid with one

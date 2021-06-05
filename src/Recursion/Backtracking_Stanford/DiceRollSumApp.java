@@ -1,4 +1,4 @@
-package Recursion.Backtracking;
+package Recursion.Backtracking_Stanford;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package Recursion.Backtracking;
+package Recursion.Backtracking_Stanford;
 
 
 public class MazeResolverApp {

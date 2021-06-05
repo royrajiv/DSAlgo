@@ -1,4 +1,4 @@
-package A_ProgAbs;
+package A_ProgrammingAbstractions;
 
 /*
     Write a recursive function that takes a string as argument and returns the reverse of

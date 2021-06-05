@@ -1,4 +1,4 @@
-package A_ProgAbs;
+package A_ProgrammingAbstractions;
 
 /**
  * Unlike many programming languages, C++ does not include a predefined operator

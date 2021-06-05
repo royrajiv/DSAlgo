@@ -1,4 +1,4 @@
-package A_ProgAbs;
+package A_ProgrammingAbstractions;
 
 /*
     The strutils.h library contains a function IntegerToString,. You might have
