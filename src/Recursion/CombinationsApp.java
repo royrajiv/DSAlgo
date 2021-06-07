@@ -1,5 +1,8 @@
 package Recursion;
-
+/*
+Input: abc
+Output: a,ab,ac,abc,b,bc,c
+ */
 public class CombinationsApp {
 
     private static StringBuilder out = new StringBuilder();
