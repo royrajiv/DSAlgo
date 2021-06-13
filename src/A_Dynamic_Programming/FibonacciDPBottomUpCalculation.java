@@ -1,4 +1,4 @@
-package A_IKWeb;
+package A_Dynamic_Programming;
 
 /*
 last video 1 variant of DP
@@ -48,7 +48,7 @@ and that kind of sorting of vertices is called a topological sort.
    T(n) = O(n)
    S(n) = O(n)
  */
-public class FibonacciBottomUp {
+public class FibonacciDPBottomUpCalculation {
 
 
     public static void main(String[] args) {
