@@ -82,7 +82,7 @@ calculated values. In this case reused F(5) to calculate F(6).
 and identify the base cases. Remember dynamic programming is always
 about breaking down the problem into simpler/smaller sub problems.
 And we need base cases to identify boundaries of the problem.
-How do we do that, what I usually do is solve the problem for such input well values
+How do we do that, what I usually do is solve the problem for such input values
 that a computer is not even needed.
 
 3> Recurence relation: the third step is to write down the recurrence relation for the optimized
@@ -103,6 +103,21 @@ This basically means where we are looking for the answer.
 So in our case (climbing stairs) the answer is in F(n) right.
 Sometimes the answer to the problem can reside in F(0).
 
+
+From the beginning you jumped ahead to tabulation (bottoms up) algorithms.
+That helped solidify my understanding of the bottoms up approach and the
+other approaches as a result. Also tabulation generally results in a more
+terse program but it might be worth noting the other two implementations:
+
+1. Recursion (use stack) - space complexity O(n), time complexity O(2^n)
+2. Memoization (top down, recursion with hash map for lookup) -
+        space complexity O(n) stack and
+        additional space complexity O(n) for the hash map, time complexity O(n)
+3. Tabulation (bottoms up) - space complexity O(1)
+        additional space complexity O(n) for list (table), time complexity O(n)
+
+You discussed this time complexity savings (exponential vs polynomial)
+in one of your early videos but without noting the distinction between these three options.
 */
 
 

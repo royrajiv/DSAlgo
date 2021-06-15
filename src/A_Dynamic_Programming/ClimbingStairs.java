@@ -44,6 +44,50 @@ F(0) = 1 (doing nothing also counts as a way to get to the top)
 F(n) = F(n-1) + F(n-2)
 In Combinatorics this is called rule of sum or addition principle.
 
+Steps:
+1> Define the objective function
+2> Identify base-cases
+3> Write down the transition function (recurrence relation)
+4> Identify the order of execution
+5> Identify the location of the answer
+
+                   fib(5)
+           '3'  /        \   '2'
+               /          \
+           fib(4)         fib(3)
+     '2'  /      \ '1'   /      \
+         /        \     /        \
+     fib(3)     fib(2)fib(2)      fib(1)
+     /    \ '1' /   \ '0'
+'1' /   '1'\   /     \
+   /        \ fib(1) fib(0)
+fib(2)     fib(1)
+
 */
 public class ClimbingStairs {
+
+    public static void main(String[] args) {
+        int n = 6;
+        System.out.println("Climbing Stairs="+noOfUniqueWays(n));
+    }
+
+    private static int noOfUniqueWays(int n)
+    {
+        if(n==1)
+            return 1;
+
+        int[] dp = new int[n+1];
+        dp[1] = 1;
+        dp[2] = 2;
+
+        //to achieve O(1) space complexity, define 2 temp variables
+        //keep assigning i-1, i-2 values to them
+        // a=i-2, b=i-1, c= a+b
+        // a=b, b=c
+
+        for(int i =3; i<=n; i++)
+            dp[i] = dp[i-1] + dp[i-2];
+
+        return dp[n];
+    }
 }
