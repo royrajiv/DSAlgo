@@ -42,12 +42,12 @@ public class ClimbingKStairs {
 
      */
     public static void main(String args[]) {
-        int s = 9, k = 2;
+        int n = 9, k = 2;
         System.out.println("Number of ways = "
-                + countWaysRecursive(s, k));
+                + countWaysRecursive(n, k));
 
         System.out.println("Number of DP ways = "
-                + countWaysDP(s, k));
+                + countWaysDP(n, k));
     }
 
     static int countWaysUtil(int n, int k) {
@@ -60,8 +60,8 @@ public class ClimbingKStairs {
     }
 
     // Returns number of ways to reach s'th stair
-    static int countWaysRecursive(int s, int k) {
-        return countWaysUtil(s + 1, k);
+    static int countWaysRecursive(int n, int k) {
+        return countWaysUtil(n + 1, k);
     }
 
 
