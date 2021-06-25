@@ -84,8 +84,11 @@ about breaking down the problem into simpler/smaller sub problems.
 And we need base cases to identify boundaries of the problem.
 How do we do that, what I usually do is solve the problem for such input values
 that a computer is not even needed.
+Base Cases: Solve the problem when computer is not even needed.
 
-3> Recurence relation: the third step is to write down the recurrence relation for the optimized
+3> Recurence relation:
+Transition function: lets think of the problem as if it is already solved.
+The third step is to write down the recurrence relation for the optimized
 objective function so how do we determine the recurrence relation ?
 sometimes you can spot the pattern by solving the problem for a few more input
 values right so if we would solve the problem for f3 f4 and then maybe f5 we

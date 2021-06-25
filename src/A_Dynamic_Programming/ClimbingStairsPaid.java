@@ -18,7 +18,8 @@ price: to reach a stair.
 
 Framework:
 1> F(i) = minimum cost to get to ith stair
-2> base cases: F(0) = 0$
+2> base cases:  Solve the problem when computer is not even needed.
+               F(0) = 0$
                F(1) = 3$
                F(2) = 2$ -- direct jump of 2 steps
                F(3) = 6$ (2+4 < 3+4 < 3+2+4)
