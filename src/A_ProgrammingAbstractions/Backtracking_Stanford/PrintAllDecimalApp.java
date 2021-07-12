@@ -13,7 +13,6 @@ Output:
 98
 99
 
-
 Input: 3
 Output:
 0 0 0
