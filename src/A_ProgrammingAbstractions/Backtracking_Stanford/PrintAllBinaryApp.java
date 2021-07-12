@@ -3,6 +3,26 @@ package A_ProgrammingAbstractions.Backtracking_Stanford;
 // Given a positive integer number N. The task is to generate all the binary strings of N bits.
 // These binary strings should be in ascending order.
 // https://www.youtube.com/watch?v=wiBPsaJs2yQ&t=445s
+/*
+Input: 2
+Output:
+0 0
+0 1
+1 0
+1 1
+
+3 digit all permutations -- consider this as "0" or "1" added before all 2 digit permutations
+Input: 3
+Output:
+0 0 0
+0 0 1
+0 1 0
+0 1 1
+1 0 0
+1 0 1
+1 1 0
+1 1 1
+ */
 public class PrintAllBinaryApp {
 
     public static void main(String[] args) {
@@ -64,23 +84,3 @@ public class PrintAllBinaryApp {
     }
 }
 
-/*
-Input: 2
-Output:
-0 0
-0 1
-1 0
-1 1
-
-3 digit all permutations -- consider this as "0" or "1" added before all 2 digit permutations
-Input: 3
-Output:
-0 0 0
-0 0 1
-0 1 0
-0 1 1
-1 0 0
-1 0 1
-1 1 0
-1 1 1
- */
