@@ -6,6 +6,13 @@ import java.util.List;
 
 /*
 Problem: Permute a List of Strings/Characters
+Calculate permutations for "a,b,c" =
+[a, b, c]
+[a, c, b]
+[b, a, c]
+[b, c, a]
+[c, a, b]
+[c, b, a]
 
 Self similarity:
 Pick the first element "a", print that, followed by permutations of the other 3 values.
@@ -24,7 +31,7 @@ Core of the idea : is to turn above logic into java code.
 @TODO Now, when you write a BackTracking algorithm: you usually create helper function,
 
         and usually pass extra parameters to help you.
-        Usually the reason for thos extra parameters is to keep track of choices that you have
+        Usually the reason for those extra parameters is to keep track of choices that you have
         been making.
         But, we didnt need an extra parameter for maze explorer problem.
         where are we remembering the choices that we are making in maze problem?
@@ -39,7 +46,7 @@ public class PermuteListApp {
 
     public static void main(String[] args) {
         System.out.println("Calculate permutations=");
-        List<String> permuteList = Arrays.asList("a","b","c","d");
+        List<String> permuteList = Arrays.asList("a","b","c");
         boolean[] visited = new boolean[permuteList.size()];
         permute(permuteList, visited);
 
