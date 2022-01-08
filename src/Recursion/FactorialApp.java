@@ -3,9 +3,9 @@ package Recursion;
 public class FactorialApp {
 
     public static void main(String[] args) {
-        int calcFactorialForNumber = 5;
-        System.out.println("Calculate Factorial for nbr     =" + calcFactorialForNumber);
-        System.out.println("Factorial                       =" + factorial(calcFactorialForNumber));
+        int n = 5;
+        System.out.println("Calculate Factorial for nbr     =" + n);
+        System.out.println("Factorial                       =" + factorial(n));
     }
 
     private static long factorial(int n) {
