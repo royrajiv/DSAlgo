@@ -75,7 +75,7 @@ public class PrintAllBinaryApp {
             // I like to think it as : each call adds to the end what came before it.
             // so its their work +  my work.
             // total work gets printed in base case.
-            // my work is a 0
+            // my work is a 0 first, since questions asks to print in ascending order
             // then my work is a 1
             // adding "0"/"1" before output will still work, it will flip the order.
             printAllBinaryHelper(n-1, output + "0");
