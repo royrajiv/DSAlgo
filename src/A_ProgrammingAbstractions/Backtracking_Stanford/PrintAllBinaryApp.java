@@ -78,6 +78,8 @@ public class PrintAllBinaryApp {
             // my work is a 0 first, since questions asks to print in ascending order
             // then my work is a 1
             // adding "0"/"1" before output will still work, it will flip the order.
+            
+            //Also, since its recursion some parameter needs to decrease or be divided to reach the smallest/base case for algo to complete/terminate
             printAllBinaryHelper(n-1, output + "0");
             printAllBinaryHelper(n-1, output + "1");
         }
